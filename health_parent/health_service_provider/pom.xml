@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>health_parent</artifactId>
+        <groupId>com.itheima</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>health_service_provider</artifactId>
+    <packaging>war</packaging>
+
+    <name>health_service_provider Maven Webapp</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.itheima</groupId>
+            <artifactId>health_interface</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!-- 配置maven插件-->
+        <plugins>
+            <!--tomcat7插件-->
+            <plugin>
+                <!--这个插件的组织名称-->
+                <groupId>org.apache.tomcat.maven</groupId>
+                <!--这个插件的工程名称-->
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <!--这个插件的版本号-->
+                <version>2.2</version>
+                <!--这个插件的配置信息-->
+                <configuration>
+                    <!--端口号-->
+                    <port>8081</port>
+                    <!--配置访问的虚拟路径-->
+                    <path>/</path>
+                    <!--配置get请求的字符集-->
+                    <uriEncoding>utf-8</uriEncoding>
+                </configuration>
+            </plugin>
+
+            <!--JDK编译插件-->
+            <plugin>
+                <!--这个插件的组织名称-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <!--这个插件的工程名称-->
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!--这个插件的配置信息-->
+                <configuration>
+                    <target>1.8</target>
+                    <source>1.8</source>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
